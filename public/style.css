@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: #121212;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.background-div {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #f0a500;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.chat-container {
+    width: 90%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.chat-box {
+    background: #242424;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: left;
+    border: 2px solid #f0a500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 1rem;
+}
+
+.chat-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px #f0a500;
+}
+
+.chat-from, .chat-to {
+    font-weight: bold;
+    color: #f0a500;
+}
+
+.chat-message {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+}
+
+.chat-time, .chat-day {
+    font-size: 0.9rem;
+    color: #b0b0b0;
+}
+
+.chat-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+button {
+    border: 2px solid white;
+    color: white;
+    background-color: #333;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #f0a500;
+    color: black;
+}
+
+#new {
+    background-color: #f0a500;
+    color: black;
+    font-weight: bold;
+}
+
+#new:hover {
+    background-color: white;
+    color: black;
+    box-shadow: 0px 0px 10px white;
+}
+
+.edit-btn {
+    background-color: #4caf50;
+}
+
+.delete-btn {
+    background-color: #d9534f;
+}
+
+.edit-btn:hover, .delete-btn:hover {
+    opacity: 0.8;
+}

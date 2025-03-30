@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Chat</title>
+    <style>
+        body {
+            background-color: #1e1e2e;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .container {
+            background: #2e2e3e;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 50%;
+            text-align: center;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #444;
+            color: white;
+        }
+        button {
+            background: #ff9800;
+            color: white;
+            padding: 10px;
+            border: none;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #e68900;
+        }
+        #info{
+            color: #e6003a;
+        }
+
+        h2{
+            color: #ff9800;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Edit Message</h2>
+        <form action="/chats/<%= chat._id %>?_method=PUT" method="POST">
+            <p id="info">This message was sent from <b><i><%=chat.from %></i></b>😃 to <b><i><%= chat.to %></i></b>🤗</p>
+            <textarea name="newmsg"><%= chat.msg %></textarea>
+            <button type="submit">Update</button>
+        </form>
+    </div>
+</body>
+</html>

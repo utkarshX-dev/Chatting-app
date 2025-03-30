@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-div">
+        <h1>Welcome to ChatRoom 👋</h1>
+        <p>Enjoy smooth and stylish conversations!</p>
+        <form action="/chats/new" method="get">
+            <button id="new">Start a New Chat</button>
+        </form>
+    </div>
+    
+    <div class="chat-container">
+        <% for(let chat of allchats) { %>
+            <div class="chat-box">
+                <p class="chat-from">From: <%= chat.from %></p>
+                <p class="chat-to">To: <%= chat.to %></p>
+                <p class="chat-message">Message: <%= chat.msg %></p>
+                <hr>
+                <br>
+                <% let total = chat.created_at.toString().split(" ")%>
+                <% let time = total[4] %>
+                <% let date = total[0] %>
+                <p class="chat-time">Time: <%= time %></p>
+                <p class="chat-day">Day: <%= date %></p>
+                <hr>
+                <br>
+                <div class="chat-actions">
+                    <form action="/chats/<%= chat._id %>/edit" method="get">
+                        <button class="edit-btn">Edit</button>
+                    </form>
+                    <form method="POST" action="/chats/<%= chat._id %>?_method=DELETE">
+                        <button class="delete-btn">Delete</button>
+                    </form>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>
