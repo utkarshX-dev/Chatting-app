@@ -38,7 +38,7 @@ app.get("/chats/new", (req, res) => {
   res.render("new.ejs");
 });
 app.post("/chats", async (req, res) => {
-  try {
+  try { 
     let { to, from, msg } = req.body;
     let newChat = new Chat({
       from: from,
