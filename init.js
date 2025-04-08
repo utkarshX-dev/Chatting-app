@@ -9,6 +9,10 @@ main()
 async function main() {
   await mongoose.connect("mongodb://127.0.0.1:27017/chatroom");
 }
+async function main() {
+  await mongoose.connect("mongodb://127.0.0.1:27017/fakewhatsapp");
+}
+
 let allchats = [
     {
         from: "neha",
@@ -25,7 +29,7 @@ let allchats = [
     {
         from: "priya",
         to: "neha",
-        msg: "Good morning! How’s your day?",
+        msg: "Good morning! How's your day?",
         created_at: new Date()
     },
     {
